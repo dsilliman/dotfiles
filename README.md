@@ -1,1 +1,1 @@
-See description of repo.
+Config files are housed here, GNU stow used to manage symlinks to proper paths.
