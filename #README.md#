@@ -1,0 +1,1 @@
+Config files are housed here, GNU stow used to manage symlinks to proper paths. Main purpose is to have version control over my configs in case I mess something up.

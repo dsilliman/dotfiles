@@ -1,0 +1,12 @@
+?
+
+touch .emacs
+open_with 
+remove .emacs
+delete .emacs
+touch init.el
+delete 
+open_with emacs
+git add *
+delete
+cut
