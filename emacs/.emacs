@@ -59,11 +59,18 @@
   "k" 'kill-buffer
   "n" 'neotree
   "/" 'split-window-right
-  "x" 'delete-window)
+  "x" 'delete-window
+  "b" 'switch-to-buffer)
 
 ;; Evil-vimish-fold: allows for persistent code folding across sessions
 (require 'evil-vimish-fold)
 (evil-vimish-fold-mode 1)
+
+;; Helm: Incremental completion
+(require 'helm-config)
+(helm-mode 1)
+
+;; Magit: package for managing git
 
 ;; Neotree; bring up working directory for easier file navigation
 (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
