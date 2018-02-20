@@ -24,7 +24,7 @@
               100)
          '(85 . 50) '(100 . 100)))))
 
-(global-set-key (kbd "C-c t") 'toggle-transparency)
+;; (global-set-key (kbd "C-c t") 'toggle-transparency)
 
 ;; Customize erc aestheic
 (setq erc-fill-function 'erc-fill-static)
@@ -41,7 +41,7 @@
 (global-set-key (kbd "M-p") 'ace-window)
 
 ;; Auto-complete-mode
-(auto-complete-mode 1)
+(add-hook 'prog-mode-hook 'auto-complete-mode)
 
 ;; ESS: emacs speaks statistics, mode for r scripts
 
@@ -58,9 +58,14 @@
   "r" 'ranger
   "k" 'kill-buffer
   "n" 'neotree
+  "e" 'erc
   "/" 'split-window-right
   "x" 'delete-window
-  "b" 'switch-to-buffer)
+  "b" 'switch-to-buffer
+  "f" 'toggle-frame-fullscreen
+  "t" 'toggle-transparency
+  "T" 'display-time-mode
+  "q" 'save-buffers-kill-terminal)
 
 ;; Evil-vimish-fold: allows for persistent code folding across sessions
 (require 'evil-vimish-fold)
@@ -82,7 +87,8 @@
 ;; Ranger: handy file search, navigation
 ;; (setq ranger-show-literal nil)
 (setq ranger-cleanup-on-disable t)
-(global-set-key (kbd "C-c z") 'ranger-toggle-scale-images)
+(global-set-key (kbd "C-c s") 'ranger-toggle-scale-images)
+(global-set-key (kbd "C-c l") 'ranger-toggle-literal)
 
 ;; which-key: shows further possible key commands after initiating a command 
 (require 'which-key)
@@ -103,7 +109,8 @@
  '(fringe-mode 0 nil (fringe))
  '(ranger-listing-dir-first nil)
  '(scroll-bar-mode nil)
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(initial-frame-alist (quote ((fullscreen . maximized)))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
